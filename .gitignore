@@ -1,3 +1,5 @@
 .env
 go_rss_aggregator.exe
 middleware
+rssagg.bin
+vendor
