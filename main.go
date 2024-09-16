@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	_"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -22,7 +22,7 @@ func main(){
 		AllowedOrigins: []string {"https://*", "http://*"},
 		AllowedMethods: []string {"GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"},
 		AllowedHeaders:  []string {"*"},
-		ExposedHeaders: []string['Link'],
+		ExposedHeaders: []string {"Link"},
 		AllowCredentials: false,
 		MaxAge: 300,
 	}))
@@ -30,6 +30,7 @@ func main(){
 	v1Router:= chi.NewRouter()
 
 	v1Router.Get("/ready", handleReadiness)
+	v1Router.Get("/err", handleErr)
 
 	router.Mount("/v1", v1Router)
 
